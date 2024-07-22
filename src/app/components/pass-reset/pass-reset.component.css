@@ -1,0 +1,23 @@
+form {
+    width: 40%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 32px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+:host {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-control,
+.form-group
+{
+    width: 100%;
+}

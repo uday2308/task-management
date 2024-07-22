@@ -1,0 +1,51 @@
+<header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><button  class="nav-link" (click)="onrequestrec()">Requests recieved</button></li>
+      <li class="nav-item"><button  class="nav-link" (click)="onrequestjoin()">Request to join</button></li>
+      <li class="nav-item"><button  class="nav-link" (click)="ongm()">Group members</button></li>
+    </ul>
+  </header>
+ 
+  <div>
+  <table *ngIf="flag==1">
+    <thead>
+      <tr>
+        <th>User name</th>
+        <th>E-mail id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of group_members">
+        <td>{{ item[1] }}</td>
+        <td>{{ item[0]}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="input-group" *ngIf="flag==2">
+    <div class="input-group-append">
+    <input type="text" class="form-control" [(ngModel)] = "email" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    </div>&nbsp;
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="invite()">Send Invitation</button>
+    </div>
+  </div>
+
+  <div>
+  <table *ngIf="flag==3">
+    <thead>
+      <tr>
+        <th>E-mail id</th>
+        <th>Response</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of grouprequestsdata">
+        <td>{{ item }}</td>
+        <td><button type="button" class="btn btn-success" (click)="onaccept(item)">Accept</button> &nbsp;&nbsp;
+          <button type="button" class="btn btn-danger" (click)="ondecline(item)">Decline</button></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>

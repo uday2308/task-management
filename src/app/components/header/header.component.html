@@ -1,0 +1,21 @@
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between justify-content-between">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+          <h5 class="text-white">Task Management Services</h5>
+        </a>
+    
+        <ul class="nav col-12 col-lg-auto mb-2 justify-content-center mb-md-0" *ngIf="!flag">
+          <li><a routerLink="/group" class="nav-link px-2 link-light">Groups</a></li>
+          <li><a routerLink="/tasks" class="nav-link px-2 link-light">Tasks</a></li>
+        </ul>
+         <div *ngIf="flag">
+            <button type="button" class="btn btn-danger" routerLink="/signup">Sign up</button>
+        </div>
+        <div *ngIf="!flag">
+            <button type="button" class="btn btn-success" routerLink="/home" (click)="onlogout()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
